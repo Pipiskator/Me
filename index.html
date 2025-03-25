@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мемеводчик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            font-size: 20px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        p {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Мемеводчик</h1>
+<input type="text" id="inputText" placeholder="Меме 'ме'" oninput="translateMe()">
+<p id="output"></p>
+
+<script>
+    function translateMe() {
+        const translations = {
+            'ме': 'ме',
+            'ме ме': 'пон',
+            'ме ме ме': 'капец',
+            'ме ме ме мее': 'усталь',
+            'ме ме ме мее мее': 'А . не ме?',
+            'ме ме ме мее мее.': 'Напротив стиралки тоже бывает холодно',
+        };
+
+        let input = document.getElementById("inputText").value.trim().toLowerCase();
+        let output = translations[input] || "неме";
+        document.getElementById("output").innerText = output;
+    }
+</script>
+</body>
+</html>
